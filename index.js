@@ -27,7 +27,7 @@ app.post('/login', async (req, res, next) => {
     	const per = await person.findOne({ name: req.body.name, password: req.body.password })
 		console.log(per)
 	    if (per && req.body.password === per.password)
-        res.status(301).redirect('http://localhost:3000/')
+        res.status(301).redirect(process.env.APP_URL)
     	else
         res.status(200).send('Unable to login')
     
