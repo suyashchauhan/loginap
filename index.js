@@ -36,4 +36,4 @@ app.post('/login', async (req, res, next) => {
 		res.send(500).send(err)
     }
 })
-app.listen(5000, () => console.log('yes listening'))
+app.listen(process.env.PORT, () => console.log('yes listening'))
